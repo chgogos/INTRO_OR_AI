@@ -2,7 +2,7 @@
 
 ## Day 1 (5/5/2025)
 
-- [Burrito Optimization Game]()
+- [The Burrito Optimization Game](https://doi.org/10.1287/orms.2022.04.14)
 - [State of Mathematical Optimization Report, 2021 (by Gurobi)](./day1/Report-StateOfMathematicalOptimizationReport.pdf)
 
 ### Code
@@ -13,11 +13,11 @@
 - <https://colab.research.google.com/github/google/or-tools/blob/stable/examples/notebook/sat/solve_with_time_limit_sample_sat.ipynb> - Slide  12
 - [knapsack.py](./day1/knapsack.py) - Slide 24
 - [nqueens_cp.py](./day1/nqueens_cp.py) - Slide 29
-- [nqueens_cp_sat.py](./day1/nqueens_cpsat.py)
+- [nqueens_cp_sat.py](./day1/nqueens_cpsat.py) - Slide 30
 
 
 
-## Day 2 (6/5/2025)
+<!-- ## Day 2 (6/5/2025)
 
 
-## Day 3 (7/5/2025)
+## Day 3 (7/5/2025) -->
