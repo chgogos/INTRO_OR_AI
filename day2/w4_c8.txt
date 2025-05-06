@@ -1,0 +1,33 @@
+# The first line contains the number of warehouses and the number of customers
+# The text <number of warehouses> lines contain the maximum demand that each 
+# warehouse can serve and the setup cost of the warehouse
+# The remaining lines contain:
+# - the demand of each customer
+# - the cost of serving the full demand of the customer by each warehouse
+# Here, the demand of the first customer is 146, and the cost of serving this demand 
+# from warehouse 1 is 6739.725, from warehouse 2 10355.05, etc.
+# The demand of the second customer is 87, and the cost of serving this demand 
+# from warehouse 1 is 3204.8625, from warehouse 2 5457.075, etc.
+
+ 4 8 
+ 5000 7500
+ 5000 0
+ 5000 7500 
+ 5000 7500 
+ 146 
+ 6739.725 10355.05 7650.4 5219.5
+ 87 
+ 3204.8625 5457.075 3845.4 2396.85 
+ 672 
+ 4914 26409.6 19622.4 13876.8 
+ 1337 
+ 32372.1125 29982.225 21024.325 29681.4 
+ 559 
+ 6421.5125 23701.6 16197.025 10383.425 
+ 1370 
+ 81972.375 28499.25 43134 65767.5 
+ 1089 
+ 33391.4625 26544.375 6370.65 16770.6 
+ 6412 
+ 372672.6 229188 203364 322800
+ 

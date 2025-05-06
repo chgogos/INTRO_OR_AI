@@ -15,9 +15,36 @@
 - [nqueens_cp.py](./day1/nqueens_cp.py) - Slide 29
 - [nqueens_cp_sat.py](./day1/nqueens_cpsat.py) - Slide 30
 
+## Day 2 (6/5/2025)
+
+- [ACP Summer School 2023: "Intro to Constraint Programming" by Tias Guns](https://www.youtube.com/watch?v=JpxbiEAFe80&list=PLcByDTr7vRTYJ2s6DL-3bzjGwtQif33y3)
+
+### Code
+
+- [knapsack.py](./day2/knapsack.py) - Slide 6
+- [variables_example.py](./day2/variables_example.py) - Slide 13
+- [objective_example.py](./day2/objective_example.py) - Slide 14
+- [linear_constraints_example.py](./day2/linear_constraints_example.py) - Slide 15
+- [conditional_constraints_example.py](./day2/conditional_constraints_example.py) - Slide 17
+- [abs_max_min_constraints_example.py](./day2/abs_max_min_constraints_example.py) - Slide 18
+- [mul_div_mod_example.py](./day2/mul_div_mod_example.py) - Slide 19
+- [all_different_example.py](./day2/all_different_example.py) - Slide 20
+- [allowed_assignments_example.py](./day2/allowed_assignments_example.py) - Slide 21
+- [solution_callback_example.py](./day2/solution_callback_example.py) - Slide 26
+- [day2_ho1_template.py](./day2/day2_ho1_template.py)
+- [day2_ho2_template.py](./day2/day2_ho2_template.py)
+- [day2_ho3_template.py](./day2/day2_ho3_template.py)
+
+### Data for hands-on exercises
+
+- Assignment Problem
+  - [assign10.txt](./day2/assign10.txt)
+  - [assign100.txt](./day2/assign100.txt)
+- Facility Location Problem
+  - [w4_c8.txt](./day2/w4_c8.txt)
+  - [w16_c50.txt](./day2/w16_c50.txt)
+- Set Partitioning Problem
+  - [sp_135_51975.txt](./day2/sp_135_51975.txt)
 
 
-<!-- ## Day 2 (6/5/2025)
-
-
-## Day 3 (7/5/2025) -->
+<!-- ## Day 3 (7/5/2025) -->

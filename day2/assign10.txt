@@ -1,0 +1,17 @@
+# The first line is the number of tasks T (also the number of employees)
+# The next T values are the costs of assigning the first task to 
+# each employee (i.e., task1 to employee 1 cost=52, task1 to 
+# employee 2 cost=89 etc.). The next T values are the costs of 
+# assigning the second task to each employee and so on and so forth.
+
+ 10
+ 52 89 40 77 89 14 9 77 92 77
+ 20 17 80 96 14 43 4 69 5 29 
+ 17 34 50 77 71 31 74 26 100 20 
+ 55 63 85 35 31 46 51 70 21 24
+ 70 13 14 26 49 80 24 48 31 42 
+ 99 72 15 91 70 94 95 50 35 30 
+ 77 83 59 20 49 97 66 21 82 42
+ 37 78 99 75 77 2 39 53 54 90
+ 79 6 19 90 57 16 64 15 50 2
+ 23 75 22 81 44 22 28 67 75 81
