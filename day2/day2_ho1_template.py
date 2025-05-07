@@ -66,4 +66,5 @@ def read_data(input_file):
 if __name__ == "__main__":
     fn = os.path.join(os.path.dirname(__file__), "assign10.txt")
     costs = read_data(fn)
+    print(costs)
     main(costs)
