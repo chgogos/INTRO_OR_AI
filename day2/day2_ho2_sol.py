@@ -94,7 +94,10 @@ def solve(a_problem):
     # constraint1: the demand of each client must be covered
     for c in a_problem.clients:
         client_demand = a_problem.clients[c][0]
-        # Fill here the missing part
+        model.add(
+            cp_model.LinearExpr.sum([x[c, w] for w in a_problem.warehouses])
+            == client_demand
+        )
 
     # constraint2: the total quantity that is drawn from each warehouse by all clients must be less than or equal to the warehouse's availability
     for w in a_problem.warehouses:
@@ -124,7 +127,7 @@ def solve(a_problem):
 
     # solve
     solver = cp_model.CpSolver()
-    # solver.parameters.log_search_progress = True
+    solver.parameters.log_search_progress = True
     status = solver.solve(model)
 
     # display results
@@ -152,7 +155,7 @@ def solve(a_problem):
 
 
 if __name__ == "__main__":
-    fn = os.path.join(os.path.dirname(__file__), "w4_c8.txt")
+    fn = os.path.join(os.path.dirname(__file__), "w16_c50.txt")
     a_problem = read_problem_data(fn)
     a_problem.display_info()
     solve(a_problem)

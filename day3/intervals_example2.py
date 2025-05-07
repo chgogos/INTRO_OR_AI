@@ -6,9 +6,9 @@ def main():
     model = cp_model.CpModel()
 
     # Task data: durations
-    durations = [3, 2, 4, 3, 1]
+    durations = [3, 2, 4, 3, 1,5,1,6,7,8,9,2,1]
     num_tasks = len(durations)
-    num_machines = 2
+    num_machines = 4
     horizon = sum(durations)  # max possible end time
 
     all_tasks = []

@@ -1,13 +1,14 @@
 import os
-from ortools.sat.python import cp_model
+from collections import defaultdict
+from ortools.linear_solver import pywraplp
 
 
 class Problem:
     def __init__(self, number_of_warehouses, number_of_clients):
         self.number_of_warehouses = number_of_warehouses
         self.number_of_clients = number_of_clients
-        self.warehouses = {}
-        self.clients = {}
+        self.warehouses = defaultdict()
+        self.clients = defaultdict()
 
     def add_warehouse(self, warehouse_id, maximum_demand, fixed_cost):
         self.warehouses[warehouse_id] = (maximum_demand, fixed_cost)
@@ -34,7 +35,7 @@ class Problem:
         print(f"Number of Clients = {self.number_of_clients}")
         for c, (d, cost_per_warehouse) in self.clients.items():
             print(
-                f"Client = {c}, demand = {d}, cost of unit per warehouse = {cost_per_warehouse}"
+                f"Client = {c}, demand = {d}, cost per warehouse = {cost_per_warehouse}"
             )
 
 
@@ -74,85 +75,77 @@ def read_problem_data(fn):
 
 
 def solve(a_problem):
-    model = cp_model.CpModel()
+    solver = pywraplp.Solver.CreateSolver("CBC")
+    if not solver:
+        return
 
     # decision variables
-    x = {}  # quantity that client c gets from warehouse w
+    x = defaultdict()  # quantity that client c gets from warehouse w
     for c in a_problem.clients:
         client_demand = a_problem.get_client_demand(c)
         for w in a_problem.warehouses:
             maximum_demand = a_problem.warehouses[w][0]
-            ub = int(min(client_demand, maximum_demand))
-            x[c, w] = model.new_int_var(0, ub, f"x{c}_{w}")
-
-    y = {}
+            # x[c, w] = solver.NumVar(0, min(client_demand, maximum_demand), f"x{c}_{w}")
+            x[c, w] = solver.NumVar(0, solver.infinity(), f"x{c}_{w}")
+    y = defaultdict()
     for w in a_problem.warehouses:
-        y[w] = model.new_bool_var(
-            f"y{w}"
-        )  # y_w is 1 when warehouse is used, 0 otherwise
+        y[w] = solver.BoolVar(f"y{w}")  # y_w is 1 when warehouse is used, 0 otherwise
 
     # constraint1: the demand of each client must be covered
     for c in a_problem.clients:
         client_demand = a_problem.clients[c][0]
-        # Fill here the missing part
+        solver.Add(sum(x[c, w] for w in a_problem.warehouses) == client_demand)
 
     # constraint2: the total quantity that is drawn from each warehouse by all clients must be less than or equal to the warehouse's availability
     for w in a_problem.warehouses:
-        maximum_demand = int(a_problem.warehouses[w][0])
-        model.add(
-            cp_model.LinearExpr.sum([x[c, w] for c in a_problem.clients])
-            <= maximum_demand * y[w]
-        )
+        maximum_demand = a_problem.warehouses[w][0]
+        solver.Add(sum(x[c, w] for c in a_problem.clients) <= maximum_demand * y[w])
 
     # objective
-    vars = []
-    weights = []
+    objective_terms_1 = []
     for c in a_problem.clients:
         for w in a_problem.warehouses:
-            vars.append(x[c, w])
-            weights.append(a_problem.get_cost_per_unit_for(c, w))
-    obj1 = cp_model.LinearExpr.weighted_sum(vars, weights)
+            objective_terms_1.append(x[c, w] * a_problem.get_cost_per_unit_for(c, w))
+    obj1 = solver.Sum(objective_terms_1)
 
-    vars = []
-    weights = []
+    objective_terms_2 = []
     for w in a_problem.warehouses:
-        vars.append(y[w])
-        weights.append(a_problem.get_fixed_cost_for(w))
-    obj2 = cp_model.LinearExpr.weighted_sum(vars, weights)
+        objective_terms_2.append(y[w] * a_problem.get_fixed_cost_for(w))
+    obj2 = solver.Sum(objective_terms_2)
 
-    model.minimize(obj1 + obj2)
+    solver.Minimize(obj1 + obj2)
 
     # solve
-    solver = cp_model.CpSolver()
-    # solver.parameters.log_search_progress = True
-    status = solver.solve(model)
+    status = solver.Solve()
 
     # display results
-    if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
-        print(
-            f"Total cost = {solver.objective_value:.1f}, STATUS = {solver.status_name(status)}"
-        )
+    if status == pywraplp.Solver.OPTIMAL or status == pywraplp.Solver.FEASIBLE:
+        print(f"Costs = {obj1.solution_value():.1f}")
+        print(f"Fixed costs = {obj2.solution_value():.1f}")
+        print(f"Total cost = {solver.Objective().Value()}, STATUS = {status}")
         for w in a_problem.warehouses:
-            if not solver.value(y[w]):
+            if y[w].solution_value() == 0:
                 print(f"Warehouse {w} is not used!\n")
                 continue
             qty_shipped = 0
             cost_shipped = 0
             print(f"Warehouse = {w}")
             for c in a_problem.clients:
-                if solver.value(x[c, w]) > 0:
-                    print(f"\tClient {c}, QTY = {solver.value(x[c, w])}")
-                    qty_shipped += solver.value(x[c, w])
-                    cost_shipped += solver.value(
-                        x[c, w]
-                    ) * a_problem.get_cost_per_unit_for(c, w)
+                if x[c, w].solution_value() > 0:
+                    print(f"\tClient {c}, QTY = {x[c, w].solution_value():.1f}")
+                    qty_shipped += x[c, w].solution_value()
+                    cost_shipped += x[
+                        c, w
+                    ].solution_value() * a_problem.get_cost_per_unit_for(c, w)
             print(
                 f"TOTAL QTY = {qty_shipped:.1f}/{a_problem.get_maximum_demand_for(w)}, TOTAL COST = {cost_shipped:.1f}\n"
             )
+
+        # for w in a_problem.warehouses:
+        #     print(f"y[{w}]={y[w].solution_value()}")
 
 
 if __name__ == "__main__":
     fn = os.path.join(os.path.dirname(__file__), "w4_c8.txt")
     a_problem = read_problem_data(fn)
-    a_problem.display_info()
     solve(a_problem)

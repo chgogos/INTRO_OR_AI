@@ -47,13 +47,20 @@ if __name__ == "__main__":
     # Create a new CP-SAT model
     model = cp_model.CpModel()
 
-    # Create start time variables for each meeting
-    start_time_vars = {
-        meeting: model.new_int_var_from_domain(
-            cp_model.Domain.from_intervals(times), f"start_{meeting}"
+    # # Create start time variables for each meeting
+    # start_time_vars = {
+    #     meeting: model.new_int_var_from_domain(
+    #         cp_model.Domain.from_intervals(times), f"start_{meeting}"
+    #     )
+    #     for meeting, times in possible_meeting_times.items()
+    # }
+
+    start_time_vars = {}
+    for meeting, times in possible_meeting_times.items():
+        times2 = [[t[0], t[1] - meeting_durations[meeting]] for t in times]
+        start_time_vars[meeting] = model.new_int_var_from_domain(
+            cp_model.Domain.from_intervals(times2), f"start_{meeting}"
         )
-        for meeting, times in possible_meeting_times.items()
-    }
 
     # Create interval variables for each meeting
     interval_vars = {
