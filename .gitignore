@@ -7,6 +7,10 @@ day2/sols/day2_ho2_sol.py
 day2/sols/day2_ho2_sol_pywraplp.py
 day2/sols/day2_ho3_sol.py
 
+
+day3/sols/day3_ho1_sol.py
+day3/sols/day3_ho2_sol.py
+
 .python-version
 pyproject.toml
 uv.lock
