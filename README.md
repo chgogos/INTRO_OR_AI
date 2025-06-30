@@ -4,7 +4,7 @@
 - [day2.pdf](./day2.pdf)
 - [day3.pdf](./day3.pdf)
 
-## Day 1 (5/5/2025)
+## Day 1
 
 - [The Burrito Optimization Game](https://doi.org/10.1287/orms.2022.04.14)
 - [State of Mathematical Optimization Report, 2021 (by Gurobi)](./day1/Report-StateOfMathematicalOptimizationReport.pdf)
@@ -19,7 +19,7 @@
 - [nqueens_cp.py](./day1/nqueens_cp.py) - Slide 29
 - [nqueens_cp_sat.py](./day1/nqueens_cpsat.py) - Slide 30
 
-## Day 2 (6/5/2025)
+## Day 2
 
 - [ACP Summer School 2023: "Intro to Constraint Programming" by Tias Guns](https://www.youtube.com/watch?v=JpxbiEAFe80&list=PLcByDTr7vRTYJ2s6DL-3bzjGwtQif33y3)
 
@@ -50,7 +50,7 @@
 - Set Partitioning Problem
   - [sp_135_51975.txt](./day2/sp_135_51975.txt)
 
-## Day 3 (7/5/2025)
+## Day 3
 
 ### Code 
 
