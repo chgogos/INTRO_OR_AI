@@ -8,6 +8,7 @@
 
 - [The Burrito Optimization Game](https://doi.org/10.1287/orms.2022.04.14)
 - [State of Mathematical Optimization Report, 2021 (by Gurobi)](./day1/Report-StateOfMathematicalOptimizationReport.pdf)
+- [O.R. & Analytics Success Stories](https://www.informs.org/Impact/O.R.-Analytics-Success-Stories )
 
 ### Code
 
