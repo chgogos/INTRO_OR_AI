@@ -109,6 +109,8 @@ def main():
 
     # Instantiate a Glop solver and naming it.
     solver = pywraplp.Solver.CreateSolver("GLOP")
+    # Instantiate a CLP solver and naming it.
+    # solver = pywraplp.Solver.CreateSolver("CLP")
     if not solver:
         return
 
