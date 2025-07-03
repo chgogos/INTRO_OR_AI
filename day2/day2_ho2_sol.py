@@ -155,7 +155,7 @@ def solve(a_problem):
 
 
 if __name__ == "__main__":
-    fn = os.path.join(os.path.dirname(__file__), "w16_c50.txt")
+    fn = os.path.join(os.path.dirname(__file__), "w4_c8.txt")
     a_problem = read_problem_data(fn)
     a_problem.display_info()
     solve(a_problem)
