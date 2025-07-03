@@ -57,7 +57,7 @@ def solve(a_problem):
         if len(xs) == 0:
             print(f'empty xs for product {j+1}')
             exit(0)
-        model.add(sum(xs) <= 1)
+        model.add(sum(xs) >= 1)
 
     # objective
     obj = sum(

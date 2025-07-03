@@ -39,6 +39,7 @@ def main(costs):
     # Solve
     solver = cp_model.CpSolver()
     solver.parameters.log_search_progress = True
+    solver.parameters.num_workers = 6
     status = solver.solve(model)
 
     # Display solution

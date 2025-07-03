@@ -15,6 +15,8 @@ def solve(board_size):
     model.add_all_different([queens[i] + i for i in range(board_size)])
     model.add_all_different([queens[i] - i for i in range(board_size)])
 
+    model.add(queens[0] == 0)
+
     # Solve the model.
     solver = cp_model.CpSolver()
     solver.solve(model)
@@ -32,5 +34,5 @@ def solve(board_size):
 
 
 if __name__ == "__main__":
-    solve(8)
+    solve(4)
 
