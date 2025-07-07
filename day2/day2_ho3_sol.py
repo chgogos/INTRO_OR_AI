@@ -67,6 +67,7 @@ def solve(a_problem):
 
     solver = cp_model.CpSolver()
     solver.parameters.log_search_progress = True
+    # solver.parameters.num_workers = 4
     status = solver.solve(model)
 
     if status == cp_model.OPTIMAL or status == cp_model.FEASIBLE:
