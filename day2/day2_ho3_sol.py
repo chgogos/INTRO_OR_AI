@@ -1,3 +1,4 @@
+# set partitioning problem
 import os
 from ortools.sat.python import cp_model
 
@@ -10,10 +11,10 @@ class Problem:
 
     def add_subset(self, cost, subset):
         self.subsets.append((cost, subset))
-    
+
     def get_cost_of_subset(self, i):
         return self.subsets[i][0]
-    
+
     def display_info(self):
         assert self.number_of_subsets == len(self.subsets)
         print(f"# products = {self.number_of_products}")
@@ -55,13 +56,14 @@ def solve(a_problem):
             if j + 1 in products:
                 xs.append(x[i])
         if len(xs) == 0:
-            print(f'empty xs for product {j+1}')
+            print(f"empty xs for product {j+1}")
             exit(0)
         model.add(sum(xs) == 1)
 
     # objective
     obj = sum(
-        x[i] * a_problem.get_cost_of_subset(i) for i in range(a_problem.number_of_subsets)
+        x[i] * a_problem.get_cost_of_subset(i)
+        for i in range(a_problem.number_of_subsets)
     )
     model.minimize(obj)
 

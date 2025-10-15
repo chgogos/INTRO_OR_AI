@@ -1,3 +1,4 @@
+# Set Covering Problem (SCP) solved with CP-SAT
 import os
 from ortools.sat.python import cp_model
 
@@ -48,7 +49,7 @@ def solve(a_problem):
     for i in range(a_problem.number_of_subsets):
         x[i] = model.new_bool_var(f"x_{i}")
 
-    # constraint: each product must be covered by exactly one of the subsets
+    # constraint: each product must be covered by at least one of the subsets
     for j in range(a_problem.number_of_products):
         xs = []
         for i, (_, products) in enumerate(a_problem.subsets):

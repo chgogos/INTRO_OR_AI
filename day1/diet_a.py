@@ -11,7 +11,7 @@ x4 = solver.NumVar(0.0, solver.infinity(), 'x4')
 x5 = solver.NumVar(0.0, solver.infinity(), 'x5')
 
 # Objective function
-solver.Minimize(2 * x1 + 1.5 * x2 + 3 * x3 + 2 * x4 + 4 * x5)
+solver.Minimize(5 * x1 + 1.5 * x2 + 3 * x3 + 2 * x4 + 4 * x5)
 
 # Constraints
 solver.Add(300 * x1 + 200 * x2 + 400 * x3 + 250 * x4 + 500 * x5 >= 1200)  # Calories

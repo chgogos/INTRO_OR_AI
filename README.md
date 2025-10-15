@@ -12,13 +12,13 @@
 
 ### Code
 
-- [investments.py](./day1/investments.py) -  Slide 6
-- [send_more_money.py](./day1/send_more_money.py) - Slide 9
-- [tsp.ipynb](./day1/tsp.ipynb) - Slide 10
-- <https://colab.research.google.com/github/google/or-tools/blob/stable/examples/notebook/sat/solve_with_time_limit_sample_sat.ipynb> - Slide  12
-- [knapsack.py](./day1/knapsack.py) - Slide 24
-- [nqueens_cp.py](./day1/nqueens_cp.py) - Slide 29
-- [nqueens_cp_sat.py](./day1/nqueens_cpsat.py) - Slide 30
+- [investments.py](./day1/investments.py)
+- [send_more_money.py](./day1/send_more_money.py)
+- [tsp.ipynb](./day1/tsp.ipynb)
+- <https://colab.research.google.com/github/google/or-tools/blob/stable/examples/notebook/sat/solve_with_time_limit_sample_sat.ipynb>
+- [knapsack.py](./day1/knapsack.py)
+- [nqueens_cp.py](./day1/nqueens_cp.py)
+- [nqueens_cp_sat.py](./day1/nqueens_cpsat.py)
 
 ## Day 2
 
@@ -26,16 +26,16 @@
 
 ### Code
 
-- [knapsack.py](./day2/knapsack.py) - Slide 6
-- [variables_example.py](./day2/variables_example.py) - Slide 13
-- [objective_example.py](./day2/objective_example.py) - Slide 14
-- [linear_constraints_example.py](./day2/linear_constraints_example.py) - Slide 15
-- [conditional_constraints_example.py](./day2/conditional_constraints_example.py) - Slide 17
-- [abs_max_min_constraints_example.py](./day2/abs_max_min_constraints_example.py) - Slide 18
-- [mul_div_mod_example.py](./day2/mul_div_mod_example.py) - Slide 19
-- [all_different_example.py](./day2/all_different_example.py) - Slide 20
-- [allowed_assignments_example.py](./day2/allowed_assignments_example.py) - Slide 21
-- [solution_callback_example.py](./day2/solution_callback_example.py) - Slide 26
+- [knapsack.py](./day2/knapsack.py)
+- [variables_example.py](./day2/variables_example.py)
+- [objective_example.py](./day2/objective_example.py)
+- [linear_constraints_example.py](./day2/linear_constraints_example.py)
+- [conditional_constraints_example.py](./day2/conditional_constraints_example.py)
+- [abs_max_min_constraints_example.py](./day2/abs_max_min_constraints_example.py)
+- [mul_div_mod_example.py](./day2/mul_div_mod_example.py)
+- [all_different_example.py](./day2/all_different_example.py)
+- [allowed_assignments_example.py](./day2/allowed_assignments_example.py)
+- [solution_callback_example.py](./day2/solution_callback_example.py)
 - [day2_ho1_template.py](./day2/day2_ho1_template.py)
 - [day2_ho2_template.py](./day2/day2_ho2_template.py)
 - [day2_ho3_template.py](./day2/day2_ho3_template.py)
@@ -55,8 +55,8 @@
 
 ### Code 
 
-- [nqueens_cpsat_proto_model_write_example.py](./day3/nqueens_cpsat_proto_model_write_example.py) - Slide 5
-- [nqueens_cpsat_proto_model_load_example.py](/day3/nqueens_cpsat_proto_model_load_example.py) - Slide 5
-- [interval_vars.py](./day3/interval_vars.py) - Slide 6
-- [intervals_example.py](./day3/intervals_example.py) - Slide 7
-- [streamlit_example.py](./day3/streamlit_example.py) - Slide 11
+- [nqueens_cpsat_proto_model_write_example.py](./day3/nqueens_cpsat_proto_model_write_example.py)
+- [nqueens_cpsat_proto_model_load_example.py](/day3/nqueens_cpsat_proto_model_load_example.py)
+- [interval_vars.py](./day3/interval_vars.py)
+- [intervals_example.py](./day3/intervals_example.py)
+- [streamlit_example.py](./day3/streamlit_example.py)
