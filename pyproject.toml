@@ -9,5 +9,6 @@ dependencies = [
     "matplotlib>=3.10.1",
     "numpy>=2.2.5",
     "ortools>=9.12.4544",
+    "scipy>=1.15.3",
     "streamlit>=1.45.0",
 ]

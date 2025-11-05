@@ -60,3 +60,15 @@
 - [interval_vars.py](./day3/interval_vars.py)
 - [intervals_example.py](./day3/intervals_example.py)
 - [streamlit_example.py](./day3/streamlit_example.py)
+
+---
+
+## Exercises
+
+- [](./exercises/ex)
+
+
+## An introduction to Python (in Greek)
+
+- [Python-1](./python-1.pdf)
+- [Python-2](./python-2.pdf)
