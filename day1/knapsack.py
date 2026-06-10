@@ -13,7 +13,6 @@ solver.Maximize(4 * x[0] + 2 * x[1] + x[2] + 2 * x[3] + 10 * x[4])
 # Constraint
 solver.Add(12 * x[0] + x[1] + x[2] + 2 * x[3] + 4 * x[4] <= 15)
 
-
 status = solver.Solve()
 
 if status == pywraplp.Solver.OPTIMAL:
@@ -23,3 +22,5 @@ if status == pywraplp.Solver.OPTIMAL:
     print(f"Maximum objective value = {solver.Objective().Value()}")
 else:
     print("No optimal solution found.")
+
+

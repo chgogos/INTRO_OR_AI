@@ -1,6 +1,6 @@
 from ortools.linear_solver import pywraplp
 
-solver = pywraplp.Solver.CreateSolver('SCIP')
+solver = pywraplp.Solver.CreateSolver('GLOP')
 
 # Decision variables
 x_A = solver.NumVar(200_000, 1_000_000, 'x_A')

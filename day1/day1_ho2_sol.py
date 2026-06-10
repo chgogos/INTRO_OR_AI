@@ -1,6 +1,6 @@
 from ortools.linear_solver import pywraplp
 
-solver = pywraplp.Solver.CreateSolver("GLOP")
+solver = pywraplp.Solver.CreateSolver("SCIP")
 
 # Decision variables
 x1 = solver.NumVar(0, solver.infinity(), "x1")
@@ -31,19 +31,11 @@ if status == pywraplp.Solver.OPTIMAL:
     print(f"Optimal solution found:")
     print(f"x1 = {round(x1.solution_value())}")
     print(f"x2 = {round(x2.solution_value())}")
-    print(f"x3 = {x3.solution_value()}")
-    print(f"x4 = {x4.solution_value()}")
-    print(f"x5 = {x5.solution_value()}")
-    print(f"x6 = {x6.solution_value()}")
-    print(f"x7 = {x7.solution_value()}")
-    print(f"Total employees = {solver.Objective().Value()}")
-    print(f"Δευτέρα = {x1.solution_value() + x4.solution_value() + x5.solution_value() + x6.solution_value() + x7.solution_value()}")
-    print(f"Τρίτη = {x1.solution_value() + x2.solution_value() + x5.solution_value() + x6.solution_value() + x7.solution_value()}")
-    print(f"Τετάρτη = {x1.solution_value() + x2.solution_value() + x3.solution_value() + x6.solution_value() + x7.solution_value()}")
-    print(f"Πέμπτη = {x1.solution_value() + x2.solution_value() + x3.solution_value() + x4.solution_value() + x7.solution_value()}")
-    print(f"Παρασκευή = {x1.solution_value() + x2.solution_value() + x3.solution_value() + x4.solution_value() + x5.solution_value()}")
-    print(f"Σάββατο = {x2.solution_value() + x3.solution_value() + x4.solution_value() + x5.solution_value() + x6.solution_value()}")
-    print(f"Κυριακή = {x3.solution_value() + x4.solution_value() + x5.solution_value() + x6.solution_value() + x7.solution_value()}")
-    
+    print(f"x3 = {round(x3.solution_value())}")
+    print(f"x4 = {round(x4.solution_value())}")
+    print(f"x5 = {round(x5.solution_value())}")
+    print(f"x6 = {round(x6.solution_value())}")
+    print(f"x7 = {round(x7.solution_value())}")
+    print(f"Total employees = {round(solver.Objective().Value())}")
 else:
     print("The problem does not have an optimal solution.")

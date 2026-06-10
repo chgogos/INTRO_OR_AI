@@ -101,7 +101,7 @@ def main(num_locations):
 
     # Solve
     solver = cp_model.CpSolver()
-    solver.parameters.max_time_in_seconds = 10.0
+    solver.parameters.max_time_in_seconds = 30.0
     solver.parameters.log_search_progress = True
     status = solver.solve(model)
 
@@ -125,4 +125,4 @@ def main(num_locations):
 
 if __name__ == "__main__":
     np.random.seed(42)  # fix seed for reproducibility
-    main(num_locations=50)
+    main(num_locations=500)
