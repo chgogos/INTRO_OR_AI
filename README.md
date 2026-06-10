@@ -1,8 +1,8 @@
 # Developing optimal solutions for organizational and business needs using OR (Operations Research) and AI (Artificial Intelligence)
 
-- [day1.pdf](./day1.pdf)
-- [day2.pdf](./day2.pdf)
-- [day3.pdf](./day3.pdf)
+- [day1.pdf](./OR&AI_day1.pdf)
+- [day2.pdf](./OR&AI_day2.pdf)
+- [day3.pdf](./OR&AI_day3.pdf)
 
 ## Day 1
 
@@ -63,12 +63,14 @@
 
 ---
 
-## Exercises
+<!-- ## Exercises
 
-- [](./exercises/ex)
+- [](./exercises/ex) -->
 
+## Python resources
 
-## An introduction to Python (in Greek)
+- https://hackmd.io/@cgogos/SkdEDp9qgg
 
+### An introduction to Python (in Greek)
 - [Python-1](./python-1.pdf)
 - [Python-2](./python-2.pdf)
